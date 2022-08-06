@@ -1,0 +1,140 @@
+.modal {
+  z-index: 50;
+  display: none;
+  place-items: center;
+  min-height: 100vh;
+
+  min-height: 100vh;
+
+  max-width: 500px;
+  margin: 0 auto;
+
+  padding: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+  background-color: #fff;
+  width: 80%;
+  color: black;
+
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.modalTopbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.modalTopbar button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  color: gray;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.modalDescription {
+  font-size: 1rem;
+  text-align: center;
+  color: gray;
+  margin: 1em 0.5em;
+}
+
+.modalButton {
+  /* width: 100%; */
+  /* height: 50px; */
+  border: none;
+  border-radius: 8px;
+  background-color: green;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 1em auto;
+  padding: 1em;
+}
+
+.modalDivider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  width: 100%;
+}
+
+.modalDivider p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: gray;
+  margin: 2em 0;
+}
+
+.modalOptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 4em;
+}
+
+.modalOptions > * {
+  font-size: 1.75rem;
+  padding: 0.1em;
+  border: 1px solid #eee;
+  border-radius: 100%;
+}
+
+.modalDisclaimer {
+  font-size: 0.8rem;
+  color: gray;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.modalDisclaimer a {
+  color: green;
+  font-weight: bold;
+}
+
+.modalSecondaryCta {
+  padding: 2em;
+  background-color: #eee;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5em;
+  color: gray;
+}
+
+.modalSecondaryCta a {
+  color: green;
+  font-weight: bold;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+  margin: 0.5em;
+}

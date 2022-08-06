@@ -1,34 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tyerra Challenge
 
-## Getting Started
+Se trata de una aplicación con funcionalidad similar a aquellas de videos cortos, con un carrusel vertical, habilitando la navegación entre los mismos con un simple desliz vertical.
 
-First, run the development server:
+## Instrucciones
 
-```bash
-npm run dev
-# or
-yarn dev
+1. Clonar el repositorio:
+
+    ```bash
+    gh repo clone POWRFULCOW89/tyerra-challenge
+    ```
+
+2. Instalar las dependencias:
+
+    ```bash
+    cd tyerra-challenge && npm i
+    ```
+
+3. Iniciar el servidor de desarrollo:
+
+    ```bash
+    npm run dev
+    ```
+
+### Descripción técnica
+
+Se trata de una aplicación en Next.js, con un enfoque a la experiencia móvil. El contenido falso consta de 5 vídeos distintos verticales locales, ligados a 5 posts diferentes, simulando una lógica de API. Usando los mecanismos de CSS `scroll-snap` podemos evitar el uso de librerías externas.
+
+Un post cuenta con el siguiente esquema:
+
+```ts
+
+type User = {
+    name: string,
+    avatar_url?: string,
+    tag: string
+}
+
+type Post = {
+    id: number,
+    author: User
+    title: string,
+    description:
+      string,
+    video_url: string,
+    likes: number,
+    comments: number,
+    shares: number,
+    audio: {
+      author: User
+      title: string,
+      url: string,
+    },
+    action?: {
+      label: string,
+      url: string,
+    },
+  }
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Líneas de mejora
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Para terminar la implementación de la aplicación, es necesario:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Traer posts desde una API (a través de `getInitialProps` o `getServerSideProps`).
+- Habilitar el formulario de registro/inicio de sesión.
+- Terminar de pulir estilos.
+- Habilitar el ciclado infinito.
